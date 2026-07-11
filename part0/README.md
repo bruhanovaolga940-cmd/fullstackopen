@@ -1,8 +1,8 @@
 ```mermaid
 sequenceDiagram
     participant User
-    participant Browser
-    participant Server
+    participant browser
+    participant server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
@@ -21,12 +21,12 @@ sequenceDiagram
 
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
 
-    User->>Browser: type somthing in input block and click save
-    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    User->>browser: type somthing in input block and click save
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    Note right of Server: server save new note to server in json file
+    Note right of server: server save new note to server in json file
 
-    Server-->>Browser: 302 Redirect to https://studies.cs.helsinki.fi/exampleapp/notes
-    Note right of Server: server redirect on page with notes, reloade the page with new note
+    server-->>browser: 302 Redirect to https://studies.cs.helsinki.fi/exampleapp/notes
+    Note right of server: server redirect on page with notes, reloade the page with new note
 
 ```
